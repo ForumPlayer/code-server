@@ -28,7 +28,7 @@ main() {
 
   # Login to Docker
   if [[ ${CI-} ]]; then
-    echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+    echo "$GITHUB_TOKEN" | docker login docker.pkg.github.com -u "$GITHUB_ACTOR" --password-stdin
   fi
 
   docker buildx bake -f ci/release-image/docker-bake.hcl --push
