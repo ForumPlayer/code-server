@@ -31,11 +31,12 @@ export class RateLimiter {
 const getRoot = async (req: Request, error?: Error): Promise<string> => {
   const content = await fs.readFile(path.join(rootPath, "src/browser/pages/login.html"), "utf8")
   let passwordMsg = `Check the config file at ${humanPath(req.args.config)} for the password.`
-  if (req.args.usingEnvPassword) {
-    passwordMsg = "Password was set from $PASSWORD."
-  } else if (req.args.usingEnvHashedPassword) {
-    passwordMsg = "Password was set from $HASHED_PASSWORD."
-  }
+  //if (req.args.usingEnvPassword) {
+  //  passwordMsg = "Password was set from $PASSWORD."
+  //} else if (req.args.usingEnvHashedPassword) {
+  //  passwordMsg = "Password was set from $HASHED_PASSWORD."
+  //}
+  passwordMsg = ""
 
   return replaceTemplates(
     req,
