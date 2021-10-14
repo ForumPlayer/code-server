@@ -1,0 +1,6 @@
+{
+    "files.watcherExclude": {
+        "**/vendor/modules/**": true,
+        "**/test/**": true
+    }
+}
